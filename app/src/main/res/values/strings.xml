@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">StrongAndHappy.se tabata timer</string>
+    <string name="rest">seconds</string>
+    <string name="work">seconds</string>
+    <string name="rounds">number of rounds</string>
+    <string name="start">start</string>
+    <string name="work_text">work</string>
+    <string name="rest_text">rest</string>
+    <string name="rounds_text">rounds</string>
+    <string name="time">Time</string>
+    <string name="go">go</string>
+    <string name="logo">strongandhappy logo</string>
+    <string name="rounds_left">rounds left</string>
+</resources>

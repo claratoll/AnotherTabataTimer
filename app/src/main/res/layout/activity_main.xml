@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/strongandhappy"
+        android:layout_width="match_parent"
+        android:layout_height="299dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/strongandhappy1" />
+
+    <EditText
+        android:id="@+id/seconds_input"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="20"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/work_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/work_text"
+        android:layout_toEndOf="@+id/seconds_input"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <EditText
+        android:id="@+id/rest_input"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="10"
+        android:inputType="number"
+        android:layout_below="@+id/seconds_input"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/rest_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rest_text"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/seconds_input"
+        android:layout_toEndOf="@+id/rest_input" />
+
+    <EditText
+        android:id="@+id/rounds_input"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rest_input"
+        android:layout_centerInParent="true"
+        android:text="8"
+        android:maxLength="4" />
+
+    <TextView
+        android:id="@+id/round_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rest_input"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/rounds_input"
+        android:text="@string/rounds_text" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rounds_input"
+        android:text="@string/start"/>
+
+</RelativeLayout>
