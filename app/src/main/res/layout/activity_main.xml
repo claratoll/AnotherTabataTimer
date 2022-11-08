@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="299dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/strongandhappy1" />
+        android:src="@drawable/strongandhappy1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/seconds_input"
@@ -20,38 +24,58 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="20"
+        android:layout_marginTop="35dp"
         android:inputType="number"
-        android:maxLength="4" />
+        android:maxLength="4"
+        android:text="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/strongandhappy" />
 
     <TextView
         android:id="@+id/work_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/work_text"
-        android:layout_toEndOf="@+id/seconds_input"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@+id/seconds_input"
+        android:text="@string/work_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/seconds_input"
+        app:layout_constraintTop_toBottomOf="@+id/strongandhappy" />
 
     <EditText
         android:id="@+id/rest_input"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/seconds_input"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="10"
+        android:layout_marginTop="20dp"
         android:inputType="number"
-        android:layout_below="@+id/seconds_input"
-        android:maxLength="4" />
+        android:maxLength="4"
+        android:text="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seconds_input" />
 
     <TextView
         android:id="@+id/rest_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rest_text"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/seconds_input"
-        android:layout_toEndOf="@+id/rest_input" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@+id/rest_input"
+        android:text="@string/rest_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rest_input"
+        app:layout_constraintTop_toBottomOf="@+id/work_text" />
 
     <EditText
         android:id="@+id/rounds_input"
@@ -59,24 +83,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rest_input"
         android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:maxLength="4"
         android:text="8"
-        android:maxLength="4" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rest_input" />
 
     <TextView
         android:id="@+id/round_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rest_input"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_toEndOf="@+id/rounds_input"
-        android:text="@string/rounds_text" />
+        android:text="@string/rounds_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rounds_input"
+        app:layout_constraintTop_toBottomOf="@+id/rest_text" />
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/rounds_input"
-        android:text="@string/start"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rounds_input" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,13 @@
 package com.example.anothertabatatimer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 
-import android.view.View;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TabataTimer extends AppCompatActivity {
@@ -26,7 +25,7 @@ public class TabataTimer extends AppCompatActivity {
 
     boolean timer_free = true;
 
-    private RelativeLayout relativeLayout;
+    private ConstraintLayout constraintLayout;
 
     CountDownTimer pauseCountDownTimer;
     CountDownTimer goCountDownTimer;
@@ -37,12 +36,18 @@ public class TabataTimer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabata_timer);
 
+        //hides action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+
         Intent intent = getIntent();
         work_number = intent.getIntExtra("work", 0);
         rest_number = intent.getIntExtra("rest", 0);
         workoutCyclesRemaining = intent.getIntExtra("rounds", 0);
 
-        relativeLayout = findViewById(R.id.activity_timer);
+        constraintLayout = findViewById(R.id.activity_timer);
 
 
         timer = findViewById(R.id.textView);
@@ -64,7 +69,7 @@ public class TabataTimer extends AppCompatActivity {
                 @Override
                 public void onTick(long l) {
                     timer.setText("" + String.valueOf(Math.round(l * 0.001f)));
-                    relativeLayout.setBackgroundColor(getResources().getColor(R.color.go_background));
+                    constraintLayout.setBackgroundColor(getResources().getColor(R.color.go_background));
                     rounds_left.setText("" + cyclesRemaining);
                     go_pause.setText("GO");
 
@@ -76,7 +81,7 @@ public class TabataTimer extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     workout(rest_number, REST);
-                    relativeLayout.setBackgroundColor(getResources().getColor(R.color.pause_background));
+                    constraintLayout.setBackgroundColor(getResources().getColor(R.color.pause_background));
                     rounds_left.setText("" + cyclesRemaining--);
                     go_pause.setText("PAUSE");
 
@@ -116,7 +121,7 @@ public class TabataTimer extends AppCompatActivity {
     }
 
     private void workoutFinished() {
-        relativeLayout.setBackgroundColor(getResources().getColor(R.color.background));
+        constraintLayout.setBackgroundColor(getResources().getColor(R.color.background));
         timer.setText("Finished");
     }
 }
