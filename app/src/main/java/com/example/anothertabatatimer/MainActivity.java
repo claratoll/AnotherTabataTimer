@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     EditText rest_input;
     EditText rounds_input;
 
+    //hejhej
+
     Button start_w;
 
     @Override
